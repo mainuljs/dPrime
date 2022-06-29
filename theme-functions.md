@@ -6,18 +6,21 @@
 
 ## Menu
 
-### showMainMenu($menu, $option, $active )
+### showMainMenu($menu, $attributes = [] )
  * $menu {array} - formatted multidimentional associative array.
- * $option { string | array | optional }  - any defined option.
- * $active { string | optional } - current menu to set active menu style.
+ * $attributes {array | optional }  - HTML tag attributes
 
-It is a theme function.
+Show the main menu for the system.
 
 ```html
 <nav class="navbar navbar-expand main-menu">				  
 	<div class="collapse navbar-collapse justify-content-end top-nav">		
 		<?php 
-			showMainMenu($menuArray, array('submenu'=> FALSE), segment(1) );
+			$attributes = [
+				'navAttr' => 'class="navbar-nav ml-auto"',
+				'subNavAttr' => 'class="dropdown-menu animate__animated animate__fadeIn animate__faster"'
+			];
+			showMainMenu($menu, $attributes );
 		?>
 	</div>																
 </nav>
@@ -28,7 +31,7 @@ It is a theme function.
 
 ## Image
 
-### featuredimg($images, $title, $withimgtag, $single)
+### viewImage($images, $title, $withimgtag, $single)
  * $images {string} - Image path strings
  * $title {string} (Optional) - title of the image. Default: NULL
  * $withimgtag {boolean} (Optional) - With image tag or only image path. Default: (TRUE) - return with image tag
@@ -37,7 +40,7 @@ It is a theme function.
  Format featured image paths into html way. 
  
  ```php
-  featuredimg('http://domain.com/images/image.jpg', 'This is image');
+  viewImage('http://domain.com/images/image.jpg', 'This is image');
   //<img srg="http://domain.com/images/image.jpg" title="This is image" />
   
  
@@ -54,7 +57,7 @@ It is a theme function.
 Return article post share links. Use only on a single post page.
 
 
-### content_util()
+### contentUtility()
 * Return: string
 
 Article post print, text size increase or decrease utility. Use Only on a single post page.
