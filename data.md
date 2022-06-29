@@ -1,5 +1,20 @@
 ## Common API Data.
 
+### config('settings.appName')
+### config('settings.appTitle')
+### config('settings.url')
+### config('settings.email')
+### config('settings.appAddress')
+### config('settings.contact')
+### config('settings.contact')
+### config('settings.logo')
+
+
+
+
+
+
+
 ### $appName
  * Type: Property.
  
