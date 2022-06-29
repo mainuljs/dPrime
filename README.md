@@ -1,10 +1,10 @@
-<h2 id="tos">Visual CMS</h2>
+<h2 id="tos">dPrime CMS</h2>
 
 > Full-featured SEO friendly CMS Powered by VisualSofts.
 
 ## What it is
 
-Visual CMS is a SEO optimized Content Management Sysetm that is built to engage visitors.
+dPrime CMS is a SEO optimized Content Management Sysetm that is built to engage visitors.
 
 ## Development Guide.
  * [Authentication](authentication.md)
