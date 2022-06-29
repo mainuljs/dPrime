@@ -1,91 +1,50 @@
 # Authentication
 
-### check_login()
+### register($credentials)
+ * Param: Array $credentials
  * Return: boolean
+
+Register a new user to the system.
+
+
+### authenticate(array $credentials)
+     * @param Array $credentials 
+     * @return reply object
+
+Authenticate a user to the system
+ 
+ ### check()
+   * @param no
+   * @return reply object
 
 Check whether the user logged in or not. If logged then it returns true, otherwise false.
 
+```php
 
-### get_username()
- * Return: true | NULL
+if(dAuth()->check())
+echo dAuth()->getUser()->username;
+
+```
+
+### getUser()
+ * Return: Object | NULL
 
 Return the user name when looged in, otherwise return NULL
 
 ```php
-echo get_username();
+echo dAuth()->getUser()->username;
 ```
 
 
-### user_validate($userlevel)
- * $userlevel { int | optional } - Validate user from 2 to 9 level.
- * Return: boolean
+### findById($id)
+ * $id { int } - User by ID
+ * Return: Object | NULL
 
-Validate logged in user by there level. Level must be 2 to 9.
-if the level is 4 then it validates from 4 to 9. 
+Find A User by its Id.
 
 ```php
- if( user_validate(7) )
- echo "Only 7, 8 and 9 level  can see it.";
+ $user = dAuth()->findById(1)
  
 ```
 
-### is_admin()
- * Return: boolean
-
-Check whether a logged in user is admin or not. 3 to 9 level users are considered as admin users.
-
-```php
- if( is_admin() )
- echo "You have permission to delete it.";
- 
-```
-
-
-## Global vars to authenticate.
-
-### $loggedIn;
-True if the user is logged in, otherwise False.
-
-```php
- if( $loggedIn )
- echo "You can see it.";
- 
-```
-
-### $loggedInUser;
-Return username of the logged in user or NULL.
-
-```php
- if( $loggedIn ) echo "Username: ".$loggedInUser;
- 
-```
- 
-### $userTitle;
-Return the group title of the logged in user or NULL if not.
-
-```php
- if( $loggedIn ) echo "User Group: ".$userTitle;
- 
-``` 
-
-### $userEmail;
-Return the email address of the logged in user or NULL if not.
-
-```php
- if( $loggedIn ) echo "User Email: ".$userEmail;
- 
-``` 
-
-
-### $userLevel;
-Return the level of the logged in user or NULL if not.
-
-```php
- if( $loggedIn ) {
-  if( is_admin($userLevel) ){
-   echo "Only admin can see it";
-  }
- }
- 
-``` 
 
