@@ -10,6 +10,88 @@
 ### config('settings.logo')
 
 
+## Content
+
+### Content::articleByAlias()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+ 
+### Content::categoryByAlias()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+### Content::articleById()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+### Content::homeContent()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+### Content::menuArticle()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+### Content::recentArticles()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+### Content::viewCount()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+### Content::getViewCount()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+### Content::articleById()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+### Content::next()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+### Content::previous()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+### Content::breadcrumb()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+### Content::relatedArticle()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+### Content::dbRelatedArticles()
+ * Param: { int } - User by ID
+ * Return: Object | NULL
+
+
+
+
+
+
+
+
+
+
+
 
 
 
