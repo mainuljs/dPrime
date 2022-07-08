@@ -84,9 +84,21 @@
 
 
 
+### Content::metaData($post)
+ * Param: { Object } - Post Object.
+ * Return: Object
 
+#### $meta - Page metadata for views;
+```php  
+  $meta->metaTitle 
+  $meta->metaUrl;
+  $meta->metaImage;
+  $meta->metaKeyword;
+  $meta->metaDescription;
+  $meta->metaSnippet;  
+```
 
-
+SEO/Post Meta Data for pages.
 
 
 
