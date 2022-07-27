@@ -89,21 +89,25 @@ Content for Home pages. Store as section by section.
  
 ``` 
 
+## Get Page if it is Linked with Menu
 
 ### Content::menuArticle()
  * Param: { int } - User by ID
  * Return: Object | NULL
+
+
+## Recent Published Posts/Articles
 
 ### Content::recentArticles()
  * Param: { int } - User by ID
  * Return: Object | NULL
 
 
+## Count and Get page views
+
 ### Content::viewCount()
  * Param: { int } - User by ID
  * Return: Object | NULL
-
-
 
 ### Content::getViewCount()
  * Param: { int } - User by ID
@@ -111,45 +115,47 @@ Content for Home pages. Store as section by section.
 
 
 
-### Content::articleById()
- * Param: { int } - User by ID
- * Return: Object | NULL
-
-
+## Next or Previous Articles for A Post
 
 ### Content::next()
  * Param: { int } - User by ID
  * Return: Object | NULL
-
-
 
 ### Content::previous()
  * Param: { int } - User by ID
  * Return: Object | NULL
 
 
+## Page Breadcrumb
 
 ### Content::breadcrumb()
  * Param: { int } - User by ID
  * Return: Object | NULL
 
 
+## Related Articles for A Page/Post
+
 ### Content::relatedArticle()
  * Param: { int } - User by ID
  * Return: Object | NULL
-
 
 ### Content::dbRelatedArticles()
  * Param: { int } - User by ID
  * Return: Object | NULL
 
 
+## Page Meta Data.
 
 ### Content::metaData($post)
  * Param: { Object } - Post Object.
  * Return: Object
 
-## Page Meta Data.
+Page/Post Meta Data.
+
+```php  
+  $meta = Content::metaData($post);
+  $meta->metaTitle;
+```
 
 ### $meta - Page metadata for views;
 
@@ -162,7 +168,7 @@ Content for Home pages. Store as section by section.
   $meta->metaSnippet;  
 ```
 
-SEO/Post Meta Data for pages.
+
 
 
 
