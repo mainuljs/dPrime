@@ -1,32 +1,93 @@
-## Common API Data.
+## Common API Data (For Controllers and Views).
 
-### config('settings.appName')
-### config('settings.appTitle')
-### config('settings.url')
-### config('settings.email')
-### config('settings.appAddress')
-### config('settings.contact')
-### config('settings.contact')
-### config('settings.logo')
+### appName - Applicaiton Name
+```php    
+  config('settings.appName') //though settings config
+  echo $appName; // for view
+```
+
+### appTitle - Applicaiton Title (Long Title)
+```php    
+  config('settings.appTitle') //though settings config
+  echo $appTitle; // for view
+```
+
+### url - Applicaiton Base Url from settings
+```php    
+  config('settings.url') //though settings config
+  echo $url; // for view
+```
+
+### email - Applicaiton Base E-mail Address
+```php    
+  config('settings.email') //though settings config
+  echo $email; // for view
+```
+### appAddress - Business Address
+```php    
+  config('settings.appAddress') //though settings config
+  echo $appAddress; // for view
+```
+
+### contact - Business Contact Number
+```php    
+  config('settings.contact') //though settings config
+  echo $contact; // for view
+```
+
+### logo - Company Logo
+```php    
+  config('settings.logo') //though settings config
+  echo $logo; // for view
+```
 
 
-## Content
+
+## Content Page Resources
 
 ### Content::articleByAlias()
- * Param: { int } - User by ID
+ * Param: { string } - Post/Page Alias.
  * Return: Object | NULL
+
+```php    
+ $page = Content::articleByAlias($alias);
+ echo $page->title;
+``` 
  
 ### Content::categoryByAlias()
- * Param: { int } - User by ID
+ * Param: { string } - Page Category Alias
  * Return: Object | NULL
+
+```php    
+ $category = Content::categoryByAlias($categoryAlias);
+ echo $category->cat_title;
+```
+
 
 ### Content::articleById()
- * Param: { int } - User by ID
+ * Param: { int } - Post/Page Id.
  * Return: Object | NULL
 
+```php    
+ $page = Content::articleById($pageId);
+ echo $page->title;
+``` 
+
 ### Content::homeContent()
- * Param: { int } - User by ID
- * Return: Object | NULL
+ * Return: Eloquent Collection | NULL
+
+Content for Home pages. Store as section by section.
+
+```php    
+ $homeItems = Content::homeContent();
+ 
+ foreach($homeItems as $item):
+ 	echo $item->h_title; // Title of the section.
+	echo $item->h_content; // Section Content
+	
+ endforeach;
+ 
+``` 
 
 
 ### Content::menuArticle()
@@ -88,9 +149,12 @@
  * Param: { Object } - Post Object.
  * Return: Object
 
-#### $meta - Page metadata for views;
+## Page Meta Data.
+
+### $meta - Page metadata for views;
+
 ```php  
-  $meta->metaTitle 
+  $meta->metaTitle;
   $meta->metaUrl;
   $meta->metaImage;
   $meta->metaKeyword;
@@ -101,53 +165,6 @@
 SEO/Post Meta Data for pages.
 
 
-
-
-
-
-
-
-
-
-### $appName
- * Type: Property.
- 
-Name of the Application.
- 
-```php  
-  echo $appName; // VisualCMS  
-```
-
-
-### $title
- * Type: Property.
- 
-Title of the Application or page title from an specific page.
- 
-```php  
-  echo $title; // VisualCMS for Publisher
-```
-
-
-### $description
- * Type: Property.
- 
-Description of the Application or page description from an specific page.
- 
-```php  
-  echo $description;
-```
-
-
-### $content_type
- * Type: Property.
- 
- Post content type. Generally two types. Single and Multiple
- 
-```php
-  if($content_type === 'single')
-  echo $content->title;  
-```
 
 
 ### $content
@@ -186,38 +203,6 @@ stdClass Object
 ```
 
 
-### $baseSlider
- * Type: Associative array data.
- 
- Data for base slider.
- Base slider data can be found as array which need to be iterate.
- 
- ```markdown
-Array
-(
-    [0] => Array
-        (
-			[title] => Blog Post
-			[alias] => blog-post
-			[introtext] => This is intro...
-			[featuredimg] => https://domain.com/images/blog-post.jpg 
-			[created_at] => 2020-11-25 06:11:00
-			[cat_title] => Blog
-			[catlead] => 0            
-			[cat_alias] => blog
-        )
-	.....
-)
- ```
- 
-```php
-
-  if( home() ):
-   slider($baseSlider); 
-  endif;
-   
-```
-
 ### $homePosts
  * Type: Associative array data.
  
@@ -243,35 +228,7 @@ Array
 )
  
  ```
- 
- 
- ### $next
-  * Type: Associative array data.
- 
- Next Article/Post if available
-  
- ### $previous
- * Type: Associative array data.
- 
- Previous Article/post if available.
-  
- ### $related
-  * Type: Associative array data.
- 
- Related article data.
- 
- 
-### $recent
-  * Type: Associative array data.
- 
-Recent published article.
 
-
-
-### $most
-  * Type: Associative array data.
- 
- Most viewed articles.
  
  
 
