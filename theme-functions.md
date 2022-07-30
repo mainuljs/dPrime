@@ -6,8 +6,8 @@
 
 ## Menu
 
-### showMainMenu($menu, $attributes = [] )
- * $menu {array} - formatted multidimentional associative array.
+### showMainMenu($menu, $attributes = [])
+ * @param Array $menu - Formatted multidimentional associative array.
  * $attributes {array | optional }  - HTML tag attributes
 
 Show the main menu for the system.
@@ -41,20 +41,21 @@ Show the main menu for the system.
  
  ```php
   viewImage('http://domain.com/images/image.jpg', 'This is image');
-  //<img srg="http://domain.com/images/image.jpg" title="This is image" />
   
+  //<img srg="http://domain.com/images/image.jpg" title="This is image" />
  
  ```
  
  
  
- ## Other
+ ## Other Functions
  
 ### share($content)
-* $content {array} - Base content array.
+* $content {array} - Base content object.
+* 
 * Return: string
 
-Return article post share links. Use only on a single post page.
+Return article/post share links. Use only on a single post page.
 
 
 ### contentUtility()
