@@ -103,6 +103,22 @@ Content for Home pages. Store as section by section.
  * Return: Object | NULL
 
 
+## Article Tag Control _________
+
+### Content::getTagNames()
+ * @param String $articleAlias - Article or Post Alias
+ * @return Model Instance | NULL
+
+Get Tag Names of an Article.
+
+### Content::articleByTag()
+ * @param String $tagName - Tag Name
+ * @return Model Instance | NULL
+
+Get all Articles of a Tag Name.
+
+
+
 ## Count and Get page views
 
 ### Content::viewCount()
