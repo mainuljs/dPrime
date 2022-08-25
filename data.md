@@ -103,6 +103,25 @@ Content for Home pages. Store as section by section.
  * Return: Object | NULL
 
 
+## Attributed Articles/Posts Like Featured, Suggested _________
+
+### Content::attributedArticles()  
+ * @param String Optional $attribution - (default 'featured') 'featured', 'suggested'
+ * @param Int Optional $articleNum - (default 10) Number of post want to.
+ * 
+ * @return Model Collection
+
+Get Attributed Articles like featured, Suggested etc.
+
+```php   
+ $suggestedPosts = Content::attributedArticles('suggested', 5); 
+ foreach($suggestedPosts as $item):
+ 	echo $item->name; // Post Title
+ endforeach;
+ ```
+
+
+
 ## Article Tag Control _________
 
 ### Content::getTagNames()
