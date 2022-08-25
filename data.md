@@ -111,12 +111,25 @@ Content for Home pages. Store as section by section.
 
 Get Tag Names of an Article.
 
+```php   
+ $tagNames = Content::getTagNames($articleAlias); 
+ foreach($tagNames as $item):
+ 	echo $item->name; // Tag Title
+ endforeach;
+ ```
+
 ### Content::articleByTag()
  * @param String $tagName - Tag Name
  * @return Model Instance | NULL
 
 Get all Articles of a Tag Name.
 
+```php   
+ $tagArticles = Content::articleByTag($tagName); 
+ foreach($tagArticles as $item):
+ 	echo $item->title; // Article Title
+ endforeach;
+ ```
 
 
 ## Count and Get page views
