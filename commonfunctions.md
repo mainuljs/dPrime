@@ -1,3 +1,16 @@
+### postUrl($postAlias, $postId)
+ * @param String $postAlias - Article or Post Alias
+ * @param Int $postId - Article or Post Id
+ * 
+ * @return String
+
+ Take the article alias and id and url based on configuration (id/alias, alias/id, id-alias, alias-id).
+
+```php
+<a href="{{ postUrl($content->alias, $content->id) }}"> Click Here </a>
+``` 
+
+
 ### successPage($data)
  * @param Array $data  - Page Data
  * @return View Template
